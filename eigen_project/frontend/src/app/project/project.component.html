@@ -1,0 +1,24 @@
+<h1 id="tableLabel">all Projects</h1>
+
+<form>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="projects">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>deadline</th>
+        <th>SteelType</th>
+        <th>ProjectType</th>
+        <th>ProjectStage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects" [routerLink]="[project.id]">
+        <td>{{ project.name }}</td>
+        <td>{{ project.deadline }}</td>
+        <td>{{ project.steelType.name }}</td>
+        <td>{{ project.type.name }}</td>
+        <td>{{ project.stage.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</form>

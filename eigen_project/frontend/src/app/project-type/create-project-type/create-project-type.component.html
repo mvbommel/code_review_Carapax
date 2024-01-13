@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="margin: auto">
+        <h2>Add project</h2>
+        <form [formGroup]="TypeForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="frmName">naam</label>
+            <input type="text" formControlName="frmName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['frmName'].errors }" />
+            <div *ngIf="submitted && f['frmName'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmName'].errors?.['required']">naam is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

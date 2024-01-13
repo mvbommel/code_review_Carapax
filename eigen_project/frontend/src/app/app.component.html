@@ -1,0 +1,25 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <a class="nav-item nav-link" routerLink="/"></a>
+  <div class="navbar-nav">
+    <a class="nav-item nav-link"  routerLink="/project">Project</a>
+    <a class="nav-item nav-link"  routerLink="/create/project">Create project</a>
+    <a class="nav-item nav-link"  routerLink="/steelType">Steel types</a>
+    <a class="nav-item nav-link"  routerLink="/create/steelType">create Steel type</a>
+    <a class="nav-item nav-link"  routerLink="/stage">project stages</a>
+    <a class="nav-item nav-link"  routerLink="/create/stage">create project stage</a>
+    <a class="nav-item nav-link"  routerLink="/type">project types</a>
+    <a class="nav-item nav-link"  routerLink="/create/type">create project type</a>
+    <div style="  position: absolute; right: 0; margin-right: 40px;">=  
+    </div>
+  </div>
+
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+  <div>
+    <!-- <alert></alert> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

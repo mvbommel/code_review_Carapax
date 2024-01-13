@@ -1,0 +1,38 @@
+<h1  *ngIf="project">{{project.name}}</h1>
+<form>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="project">
+    <tbody>
+      <tr>
+        <td>name</td>
+        <td>{{ project.name }}</td>
+      </tr>
+      <tr>
+        <td>deadline</td>
+        <td>{{ project.deadline }}</td>
+      </tr>
+      <tr>
+        <td>steeltype</td>
+        <td>{{ project.steelType.name }}</td>
+      </tr>
+      <tr>
+        <td>stainless</td>
+        <td>{{ project.steelType.stainless }}</td>
+      </tr>
+      <tr>
+        <td>hardenable</td>
+        <td>{{ project.steelType.hardenable }}</td>
+      </tr>
+      <tr>
+        <td>project type</td>
+        <td>{{ project.type.name }}</td>
+      </tr>
+      <tr>
+        <td>project stage</td>
+        <td>{{ project.stage.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button  class="btn btn-primary" [routerLink]="['/edit/project', project.id]" *ngIf="project">edit</button>
+  <button class="btn btn-primary" (click)="deleteProject()"> delete </button>
+  </form>

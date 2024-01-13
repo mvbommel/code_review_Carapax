@@ -1,0 +1,21 @@
+<h1 id="tableLabel">all SteelTypes</h1>
+
+<form>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="steelTypes">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>stainless</th>
+        <th>hardenable</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let type of steelTypes" [routerLink]="[type.id]">
+        <td>{{ type.name }}</td>
+        <td>{{ type.stainless }}</td>
+        <td>{{ type.hardenable }}</td>
+        <td><button class="btn btn-danger" (click)="deleteSteelType(type.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</form>

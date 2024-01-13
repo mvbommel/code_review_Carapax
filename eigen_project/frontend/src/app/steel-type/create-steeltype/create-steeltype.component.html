@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="margin: auto">
+        <h2>Add project</h2>
+        <form [formGroup]="steelForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="frmName">naam</label>
+            <input type="text" formControlName="frmName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['frmName'].errors }" />
+            <div *ngIf="submitted && f['frmName'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmName'].errors?.['required']">naam is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="frmStainless">Stainless</label>
+            <select formControlName="frmStainless" [attr.disabled]="disableStainless" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['frmStainless'].errors }">
+              <option [ngValue]="true" >true</option>
+              <option [ngValue]="false"> false</option>
+            </select>
+            <div *ngIf="submitted && f['frmStainless'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmStainless'].errors?.['required']">stainless is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="frmHardenable">hardenable</label>
+            <select formControlName="frmHardenable" [attr.disabled]="disableHardenable" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['frmHardenable'].errors }">
+              <option [ngValue]="true" >true</option>
+              <option [ngValue]="false"> false</option>
+            </select>
+            <div *ngIf="submitted && f['frmHardenable'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmHardenable'].errors?.['required']">hardenable is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

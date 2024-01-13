@@ -1,0 +1,17 @@
+<h1 id="tableLabel">all ProjectStages</h1>
+
+<form>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="Stages">
+    <thead>
+      <tr>
+        <th>name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stage of Stages" [routerLink]="[stage.id]">
+        <td>{{ stage.name }}</td>
+        <td><button class="btn btn-danger" (click)="deleteProjectStage(stage.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</form>

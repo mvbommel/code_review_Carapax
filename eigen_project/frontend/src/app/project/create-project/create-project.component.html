@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="margin: auto">
+        <h2>Add project</h2>
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="frmName">naam</label>
+            <input type="text" formControlName="frmName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['frmName'].errors }" />
+            <div *ngIf="submitted && f['frmName'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmName'].errors?.['required']">naam is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Deadline</label>
+            <input type="date" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label for="frmSteelType">SteelType</label>
+            <select formControlName="frmSteelType" [attr.disabled]="disableSteelType" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['frmSteelType'].errors }">
+              <option *ngFor="let steelType of steelTypes;" [ngValue]="steelType.id">{{steelType.name}}</option>
+            </select>
+            <div *ngIf="submitted && f['frmSteelType'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmSteelType'].errors?.['required']">SteelType is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="frmType">ProjectType</label>
+            <select formControlName="frmType" [attr.disabled]="disableProjectType" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['frmType'].errors }">
+              <option *ngFor="let type of types;" [ngValue]="type.id">{{type.name}}</option>
+            </select>
+            <div *ngIf="submitted && f['frmType'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmType'].errors?.['required']">ProjectType is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="frmStage">ProjectStage</label>
+            <select formControlName="frmStage" [attr.disabled]="disableProjectStage" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['frmStage'].errors }">
+              <option   *ngFor="let stage of stages;" [ngValue]="stage.id">{{stage.name}}</option>
+            </select>
+            <div *ngIf="submitted && f['frmStage'].errors" class="invalid-feedback">
+              <div *ngIf="f['frmStage'].errors?.['required']">ProjectStage is verplicht</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

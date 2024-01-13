@@ -1,0 +1,17 @@
+<h1 id="tableLabel">all projectTypes</h1>
+
+<form>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="types">
+    <thead>
+      <tr>
+        <th>name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let type of types" [routerLink]="[type.id]">
+        <td>{{ type.name }}</td>
+        <td><button class="btn btn-danger" (click)="deleteProjectType(type.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
