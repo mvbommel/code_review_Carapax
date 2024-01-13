@@ -1,4 +1,4 @@
 # code_review_Carapax
 
 
-een aantal stukken code voor carapax om te reviewen. een voorbeeld van een advent of code oplossing en een stuk van mijn eigen project.
+Two pieces of software for Carapax to Code review. one example of a advent of code solution and my hobby project in a state of development.
